@@ -1,3 +1,104 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>IMDB Sentiment Analysis</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/business-frontpage.css" rel="stylesheet">
+
+  <style>
+    .card{
+      border-radius:10px;
+    }
+    .body{
+        background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    }
+    .jumbotron{
+        border-radius:10px;
+    }
+
+  </style>
+</head>
+
+<body class = "body">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">IMDB Sentiment Analysis</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/Modojojo/imdb-sentiment-analysis">Source Code</a>
+          </li><i class="bi bi-github"></i>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 mb-5">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+          <h1 class="display-4 text-white mt-5 mb-2">Classify a Movie based on it's Review</h1>
+          <p></p>
+          <p class="lead mb-1 text-white-50">The application classifies a movie as Good or Bad based on a review. A DistilBERT Transformer model is used to make predictions, the model is Fine-Tuned on IMDB movie review dataset.</p>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+    <!-- /.row -->
+    <div class="row">
+        <div class = "card col-md-12 shadow">
+            <div class = "card-body">
+                <form action = "/predict" method = "get">
+                    <div class="jumbotron pt-1 pb-1 jumbotron-fluid text-center" style="display:{{display}}; background-color:{{jumbotron_bg}};">
+                      <div class="container">
+                          <h1 class="display-5"> {{prediction}} </h1>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <h3><label for="exampleFormControlTextarea1">Please Enter a Movie Review</label></h3>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-outline-primary" type="submit">Predict</button>
+                    <a href="/" class="btn btn-outline-dark">Reset</a>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- /.container -->
+
+  <!-- Bootstrap core JavaScript -->
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
 
 </html>

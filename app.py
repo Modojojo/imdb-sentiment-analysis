@@ -9,14 +9,15 @@ app = Flask(__name__, template_folder=template_dir)
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html', display="none")
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def prediction():
     # sentences = request.form['sentence']
     # model.predict(sentences)
-    return render_template('index.html')
+    print('called')
+    return render_template('index.html', prediction="Good", display="show", jumbotron_bg="#88eba2")
 
 
 def read_params(params_path):
