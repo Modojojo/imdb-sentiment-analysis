@@ -20,12 +20,18 @@ def prediction():
         prediction = 'Positive Review'
         display = 'show'
         jumbotron_bg = "#88eba2"
+        text_color = '#185e18'
     elif output[0] == 'Negative':
         prediction = 'Negative Review'
         display = 'show'
-        jumbotron_bg = "#eb787a"
+        jumbotron_bg = "#ed7e7e"
+        text_color = '#a30000'
 
-    return render_template('index.html', prediction=prediction, display=display, jumbotron_bg=jumbotron_bg)
+    return render_template('index.html',
+                           prediction=prediction,
+                           display=display,
+                           jumbotron_bg=jumbotron_bg,
+                           text_color=text_color)
 
 
 def read_params(params_path):
