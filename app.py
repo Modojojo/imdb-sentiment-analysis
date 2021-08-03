@@ -12,12 +12,20 @@ def index():
     return render_template('index.html', display="none")
 
 
-@app.route('/predict', methods=['GET', 'POST'])
+@app.route('/predict', methods=['POST'])
 def prediction():
-    # sentences = request.form['sentence']
-    # model.predict(sentences)
-    print('called')
-    return render_template('index.html', prediction="Good", display="show", jumbotron_bg="#88eba2")
+    sentences = request.form['sentence']
+    output = model.predict(sentences)
+    if output[0] == 'Positive':
+        prediction = 'Positive Review'
+        display = 'show'
+        jumbotron_bg = "#88eba2"
+    elif output[0] == 'Negative':
+        prediction = 'Negative Review'
+        display = 'show'
+        jumbotron_bg = "#eb787a"
+
+    return render_template('index.html', prediction=prediction, display=display, jumbotron_bg=jumbotron_bg)
 
 
 def read_params(params_path):
