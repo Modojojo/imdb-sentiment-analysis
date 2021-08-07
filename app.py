@@ -15,7 +15,12 @@ def index():
 @app.route('/predict', methods=['POST'])
 def prediction():
     sentences = request.form['sentence']
-    output = model.predict(sentences)
+    if sentences == '' or sentences == ' ':
+        return render_template('error.html', err_msg='Please enter a valid review')
+    try:
+        output = model.predict(sentences)
+    except Exception as e:
+        return render_template('error.html', err_msg=str(e))
     if output[0] == 'Positive':
         prediction = 'Positive Review'
         display = 'show'
