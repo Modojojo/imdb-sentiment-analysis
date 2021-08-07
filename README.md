@@ -1,13 +1,27 @@
 # IMDB Sentiment Analysis
 Classify a movie review into Positive or Negative review using DistilBERT Transformer.<br/>
 A pre-trained DistilBERT transformer model was used which was fine-tuned on the IMDB reviews dataset. 
-
+<br/><br/>
+##  Webapp
+### Home page
+![home page](https://raw.githubusercontent.com/Modojojo/imdb-sentiment-analysis/main/screenshots/home.PNG)
+### Positive review 
+![positive review input](https://raw.githubusercontent.com/Modojojo/imdb-sentiment-analysis/main/screenshots/positive_with_review.PNG)
+### Prediction for Positive review
+![prediction for positive review](https://raw.githubusercontent.com/Modojojo/imdb-sentiment-analysis/main/screenshots/positive_prediction.PNG)
+### Negative Review
+![negative review input](https://github.com/Modojojo/imdb-sentiment-analysis/blob/main/screenshots/Negative_with_review.PNG)
+### Prediction for negative review
+![prediction for negative review](https://raw.githubusercontent.com/Modojojo/imdb-sentiment-analysis/main/screenshots/negative_review.PNG)
+<br/><br/>
 ##  Repository Structure 
 ```
 main
 |── models
 |    |── model                   # Holds model files
 |    └── tokenizer               # Holds tokenizer files 
+|
+|── screenshots                  # Contains webapp screenshots
 |
 |── src
 |    |── __init__.py     
@@ -27,7 +41,7 @@ main
 |── requirements.txt
 └── setup.py
 ```
-
+<br/><br/>
 ## Setup
   1. Create a new conda environment 
 ```
